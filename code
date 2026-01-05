@@ -1,0 +1,16 @@
+1.两数之和
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        c={}
+        for i,n in enumerate(nums):
+            if n in c:
+                return [i,c[n]]
+            c[target-n]=i
+2.字母异位词分组
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        d=defaultdict(list)
+        for s in strs:
+            sorted_s=''.join(sorted(s))
+            d[sorted_s].append(s)
+        return list(d.values())
