@@ -14,3 +14,16 @@ class Solution:
             sorted_s=''.join(sorted(s))
             d[sorted_s].append(s)
         return list(d.values())
+3.最长连续序列
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        st = set(nums)  
+        ans = 0
+        for x in st:
+            if x - 1 in st:
+                continue
+            y = x + 1
+            while y in st:
+                y += 1
+            ans = max(ans, y - x) 
+        return ans
