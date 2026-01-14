@@ -44,9 +44,7 @@ class Solution:
             area = (right - left) * min(height[left], height[right])
             ans = max(ans, area)
             if height[left] < height[right]:
-                # height[left] 与右边的任意垂线都无法组成一个比 ans 更大的面积
                 left += 1
             else:
-                # height[right] 与左边的任意垂线都无法组成一个比 ans 更大的面积
                 right -= 1
         return ans
